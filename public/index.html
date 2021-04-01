@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,
+      user-scalable=no">
+      <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+<!--      引入reset样式配置，只能放在public文件夹下-->
+      <link rel="stylesheet" type="text/css" href="reset.css">
+<!--      解决点击响应延时0.3s 问题-->
+      <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_2457942_02z3eayn489u.css">
+      <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+      <script>
+        if ('addEventListener' in document) {
+            document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+            }, false);
+        }
+        if(!window.Promise) {
+            document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+        }
+      </script>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>

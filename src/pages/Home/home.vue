@@ -42,7 +42,7 @@
 		data(){
 			return{
 				location:"beijing",
-				baseImageUrl: "https://fuss10.elemecdn.com",
+				// baseImageUrl: "https://fuss10.elemecdn.com",
 				categorysArr:["1","2","3"]
 			}
 		},
@@ -102,7 +102,6 @@
 		float: left;
 		text-decoration: none;
 		font-size: 20px;
-		fill: red;
 	}
 	.header_search{
 	    position: absolute;

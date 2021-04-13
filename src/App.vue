@@ -3,7 +3,7 @@
     <!-- 路由组件的视图位置 -->
     <router-view/>
     <!-- 底部组件 -->
-    <FooterGuide></FooterGuide>
+    <FooterGuide v-show="$route.meta.showFooter"/>
   </div>
 </template>
 <script>

@@ -8,11 +8,18 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "anymatch": "^3.1.1",
+    "axios": "^0.21.1",
+    "chokidar": "^3.5.1",
     "core-js": "^3.6.5",
+    "extglob": "^2.0.4",
+    "micromatch": "^3.1.10",
+    "prettier": "^1.19.1",
     "swiper": "^6.5.3",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -23,6 +30,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "mockjs": "^1.1.0",
     "vue-template-compiler": "^2.6.11"
   }
 }

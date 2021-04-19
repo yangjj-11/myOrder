@@ -17,8 +17,14 @@
 		        <!-- swiper的包裹层div -->
 		        <div class="swiper-wrapper">
 		          	<!-- swiper的轮播div -->
-		          	<div class="swiper-slide" v-for="(pages,index) in categorysArr" :key="index">
-		            	<a href="#">{{pages}}</a>
+		          	<div class="swiper-slide">
+		            	<div v-for="(categorie,index) in categories" :key="index" class="top_categorie">{{categorie}}</div>
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="">
+		          	</div>
+		          	<div class="swiper-slide">
+		            	<img src="">
 		          	</div>
 		        </div>
 		        <!-- swiper轮播图圆点 -->
@@ -43,7 +49,8 @@
 			return{
 				location:"beijing",
 				// baseImageUrl: "https://fuss10.elemecdn.com",
-				categorysArr:["1","2","3"]
+				// categorysArr:["1","2"]
+				categories:["美食外卖", "甜品饮品", "商超便利", "水果", "送药上门", "星选好店", "下午茶", "签到", "跑腿代购", "买菜"]
 			}
 		},
 		// 将组件映射成标签
@@ -55,9 +62,17 @@
 			new Swiper('.swiper-container',{
 				// 表示可以循环播放轮播图
 				loop: true,
+				// 轮播图的方向，也可以是vertical方向
+				direction:'horizontal',
+				// 自动播放时间
+				autoplay:true,
+				// 播放的速度
+				// speed:2000,
 				pagination:{
 					el:'swiper-pagination'
-				}
+				},
+				// 这样，即使我们滑动之后， 定时器也不会被清除
+				autoplayDisableOnInteraction : false,
 			})
 		}
 	// 	computed: {
@@ -131,31 +146,25 @@
 		height: 100%;
 	}
 	.swiper-container .swiper-wrapper .swiper-slide{
-		display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-wrap: wrap;
+		width: 100%;
+		height: 100%;
 	}
-	.swiper-container .swiper-wrapper .swiper-slide .link_to_food{
-		width: 25%;
-	}
-	.swiper-container .swiper-wrapper .swiper-slide .link_to_food .food_container{
-		display: block;
-        width: 100%;
-        text-align: center;
-        padding-bottom: 10px;
-        font-size: 0;
-	}
-	.swiper-container .swiper-wrapper .swiper-slide .link_to_food .food_container img{
-		display: inline-block;
-        width: 50px;
-        height: 50px;
-	}
-	.swiper-container .swiper-wrapper .swiper-slide .link_to_food span{
-		display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 13px;
-        color: #666;
+	/*.swiper-container .swiper-wrapper .swiper-slide img{
+		width: 100%;
+		height: 100%;
+	}*/
+	.top_categorie{
+		float: left;
+		width: 50px;
+		height: 50px;
+		background-color: red;
+		margin: 32px 0px 0px 18px;
+		border-radius: 25px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 20px;
+		font-weight: bold;
+		overflow: hidden;
+		opacity: 0.7;
 	}
 </style>

@@ -1,5 +1,6 @@
 /*
 与后台交互模块 （依赖已封装的ajax函数）
+函数的返回值也是promise
  */
 import ajax from './ajax'
 const BASE_URL = '/api'

@@ -32,13 +32,15 @@
 		              		<section class="login_verification">
 		                		<input type="text" maxlength="8" placeholder="密码" v-if="showPwd" v-model="pwd">
 		                		<input type="password" maxlength="8" placeholder="密码" v-else v-model="pwd">
-		                		<div class="switch_button off" :class="showPwd?'on':'off'" @click="showPwd=!showPwd">
+		                		<div class="switch_button on" :class="showPwd?'on':'off'" @click="showPwd=!showPwd">
 		                  			<div class="switch_circle" :class="{right: showPwd}"></div>
 		                  			<span class="switch_text">{{showPwd ? 'abc' : '...'}}</span>
 		                		</div>
 		              		</section>
 		              		<section class="login_message">
 		                		<input type="text" maxlength="11" placeholder="验证码" v-model="captcha">
+		                		<!-- ref用来给子组件或元素注册引用信息 -->
+		                		<img class="get_verification" src="http://localhost:4000/captcha" alt="captcha" @click="getCaptcha" ref="captcha">
 		              		</section>
 	            		</section>
 	          		</div>
@@ -64,7 +66,7 @@
 	  			loginWay: false,
 	  			phone: '', // 手机号
 	  			computeTime: 0,
-	  			showPwd: false, // 是否显示密码
+	  			showPwd: true, // 是否显示密码(或者隐藏)
      			pwd: '',
      			name: '', // 用户名
      			code: '', // 短信验证码
@@ -90,6 +92,7 @@
 			        	this.computeTime--
 			        	if (this.computeTime <= 0) {
 				            // 停止计时
+				            // setInterval方法会返回一个id，在触发setInterval方法时保存这个id，然后在页面摧毁时（beforedestory)执行clearInterval方法
 				            clearInterval(this.intervalId)
 			        	}
 			    	}, 1000)
@@ -293,6 +296,20 @@
         background: #fff;
         box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
         transition: transform .3s;
+        display: block;
+	}
+	.login_verification .switch_button .right{
+		transform: translateX(30px);
+	}
+	.login_verification .on{
+		background: #02a774;
+	}
+	.login_verification .off{
+		background: #fff;
+	}
+	.login_verification .off .switch_text{
+		float: right;
+        color: #ddd;
 	}
 	.login_hint{
 		margin-top: 12px;
@@ -331,6 +348,5 @@
     }
     .icon-huitui{
     	font-size: 40px;
-    	
     }
 </style>

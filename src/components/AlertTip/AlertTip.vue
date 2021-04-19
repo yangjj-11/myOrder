@@ -18,7 +18,7 @@
     },
     methods: {
       closeTip () {
-        // 分发自定义事件(事件名: closeTip)
+        // 分发自定义事件(事件名: closeTip)以便于v-on使用
         this.$emit('closeTip')
       }
     }

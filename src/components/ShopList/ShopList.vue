@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-
+  
 </script>
 <style scoped>
   .shop_list, .shop_li{

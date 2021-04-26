@@ -35,7 +35,7 @@
 		        <!-- swiper轮播图圆点 -->
 		        <div class="swiper-pagination"></div>
 		    </div>
-		    <img src="./msite_back.svg" alt="back" v-else>
+		    <img src="../../images/home/msite_back.svg" alt="back" v-else>
 		</nav>
 		<div class="msite_shop_list">
       		<div class="shop_header">
@@ -51,7 +51,6 @@
 	import HeaderTop from '../../components/HeaderTop/HeaderTop.vue'
 	import ShopList from '../../components/ShopList/ShopList.vue'
 	import Swiper from 'swiper'
-	import data from "../../mock/data.json"
 	// // 同时引入swiper的css文件
 	import 'swiper/swiper-bundle.css'
 	// 利用mapState语法糖去读取state对象
@@ -64,7 +63,6 @@
 				baseImageUrl: "https://fuss10.elemecdn.com",
 				// categorysArr:["1","2"]
 				// categorys:["美食外卖", "甜品饮品", "商超便利", "水果", "送药上门", "星选好店", "下午茶", "签到", "跑腿代购", "买菜"]
-				data: data
 			}
 		},
 		// 将组件映射成标签
@@ -75,8 +73,8 @@
 		mounted(){
 			// 注意要在页面加载完成之后（mounted）再进行swiper的初始化
 			// 忘记方法名时查看Action.js
-		    this.$store.dispatch('getCategorys')
-		    this.$store.dispatch('getShops')
+		    this.$store.dispatch('getCategorys'),
+		    this.$store.dispatch('getShops'),
 			new Swiper('.swiper-container',{
 				// 表示可以循环播放轮播图
 				loop: true,

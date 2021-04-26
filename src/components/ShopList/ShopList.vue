@@ -15,7 +15,7 @@
                 </li>
               </ul>
             </section>
-            <!-- <section class="shop_rating_order">
+            <section class="shop_rating_order">
               <section class="shop_rating_order_left">
                 <div class="rating_section">
                   {{info.serviceScore}}
@@ -34,7 +34,7 @@
                 <span class="segmentation">/</span>
                 <span>配送费约¥{{info.deliveryPrice}}</span>
               </p>
-            </section> -->
+            </section>
           </div>
         </a>
       </li>
@@ -71,9 +71,7 @@ export default {
   }
   .shop_container .shop_li a{
     float: left;
-    display: block;
     padding: 15px 8px;
-    width: 100%;
   }
   .shop_li .shop_left{
     float: left;
@@ -125,6 +123,7 @@ export default {
   }
   .shop_right .shop_rating_order{
     width: 100%;
+    float: left;
     margin-top: 18px;
     margin-bottom: 8px;
   }
@@ -145,6 +144,7 @@ export default {
     transform: scale(.8);
   }
   .shop_right .shop_rating_order_right{
+    padding-right: 5px;
     float: right;
     font-size: 0;
   }

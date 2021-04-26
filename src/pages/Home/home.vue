@@ -31,12 +31,6 @@
             			  <span>{{data}}</span>
             			</a>
 		          	</div>
-		          	<!-- <div class="swiper-slide">
-		            	<img src="">
-		          	</div>
-		          	<div class="swiper-slide">
-		            	<img src="">
-		          	</div> -->
 		        </div>
 		        <!-- swiper轮播图圆点 -->
 		        <div class="swiper-pagination"></div>
@@ -57,6 +51,7 @@
 	import HeaderTop from '../../components/HeaderTop/HeaderTop.vue'
 	import ShopList from '../../components/ShopList/ShopList.vue'
 	import Swiper from 'swiper'
+	import data from "../../mock/data.json"
 	// // 同时引入swiper的css文件
 	import 'swiper/swiper-bundle.css'
 	// 利用mapState语法糖去读取state对象
@@ -69,6 +64,7 @@
 				baseImageUrl: "https://fuss10.elemecdn.com",
 				// categorysArr:["1","2"]
 				// categorys:["美食外卖", "甜品饮品", "商超便利", "水果", "送药上门", "星选好店", "下午茶", "签到", "跑腿代购", "买菜"]
+				data: data
 			}
 		},
 		// 将组件映射成标签

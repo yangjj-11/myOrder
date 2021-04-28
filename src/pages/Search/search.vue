@@ -7,7 +7,7 @@
 	    </form>
 	    <section class="list" v-if="!noSearchShops">
 	      	<ul class="list_container">
-	        	<router-link :to="{path:'', query:{id:item.id}}" tag="li"
+	        	<router-link :to="{path:'/shop', query:{id:item.id}}" tag="li"
 	                     v-for="item in searchShops" :key="item.id" class="list_li">
 		          	<section class="item_left">
 		            	<img :src="imgBaseUrl + item.image_path" class="restaurant_img">
